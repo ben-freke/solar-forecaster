@@ -1,0 +1,17 @@
+node_modules
+dist
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+*.log
+coverage
+.DS_Store
+.idea
+.vscode
+main.go
+go.mod
+go.sum
+solar-forecaster
+README.md

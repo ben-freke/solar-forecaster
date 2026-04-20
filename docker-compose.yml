@@ -1,0 +1,20 @@
+services:
+  solar-forecaster:
+    build:
+      context: .
+      platforms:
+        - linux/arm64
+    image: solar-forecaster:local
+    container_name: solar-forecaster
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./horizon.txt:/etc/solar-forecaster/horizon.txt:ro
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

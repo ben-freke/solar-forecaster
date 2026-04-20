@@ -1,0 +1,37 @@
+{
+  "name": "solar-forecaster",
+  "version": "0.1.0",
+  "description": "Fetches solar production forecasts from forecast.solar on a cron and exposes them as Prometheus metrics.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src",
+    "format": "prettier --write src"
+  },
+  "dependencies": {
+    "croner": "^9.0.0",
+    "pino": "^9.5.0",
+    "prom-client": "^15.1.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.14.0",
+    "@typescript-eslint/parser": "^8.14.0",
+    "eslint": "^9.14.0",
+    "pino-pretty": "^11.3.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.14.0",
+    "vitest": "^2.1.5"
+  }
+}
